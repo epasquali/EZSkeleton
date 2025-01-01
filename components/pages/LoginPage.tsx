@@ -1,13 +1,5 @@
-import { Text, Stack } from "@mantine/core";
-import { EmailInput } from "../auth/EmailInput/EmailInput";
-import { FormBox } from "../common/FormBox";
+import { LoginForm } from "../auth/LoginForm";
 
 export function LoginPage() {
-  return (
-    <Stack>
-      <Text>This is the login page</Text>
-      <EmailInput />
-      <FormBox />
-    </Stack>
-  );
+  return <LoginForm />;
 }

@@ -3,9 +3,9 @@ import { IconAlertTriangle } from "@tabler/icons-react";
 import { TextInput } from "@mantine/core";
 import { useField, isEmail } from "@mantine/form";
 
-import classes from "./EmailInput.module.css";
+import classes from "./EmailInputField.module.css";
 
-export function EmailInput() {
+export function EmailInputField() {
   const emailField = useField({
     initialValue: "",
     validateOnChange: true,

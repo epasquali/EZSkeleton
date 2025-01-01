@@ -1,13 +1,19 @@
+import { ReactNode } from "react";
 import { Text, Paper } from "@mantine/core";
+import { FormHeadings } from "./FormHeadings";
 
-export function FormBox() {
+interface FormBoxProps {
+  headings: string[];
+  children: ReactNode;
+}
+
+export function FormBox({ headings, children }: FormBoxProps) {
   return (
-    <Paper shadow="xs" p="xl">
-      <Text>Paper is the most basic ui component</Text>
-      <Text>
-        Use it to create cards, dropdowns, modals and other components that
-        require background with shadow
-      </Text>
-    </Paper>
+    <>
+      <FormHeadings headings={headings} />
+      <Paper shadow="xs" w={"35vw"} px={30} py={50}>
+        {children}
+      </Paper>
+    </>
   );
 }
