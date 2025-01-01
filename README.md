@@ -43,22 +43,17 @@ export const APPMETADATA = {
     url: "/",
     title: "Your App Title",
     description: "A brief description of your site",
-    images: [
-      { url: "https://example.com/hero-image.jpg" },
-    ],
+    images: [{ url: "https://example.com/hero-image.jpg" }],
   },
   twitter: {
     card: "summary_large_image",
     title: "Your App Title",
     description: "A brief description for Twitter",
-    images: [
-      "https://example.com/hero-image.jpg",
-    ],
+    images: ["https://example.com/hero-image.jpg"],
   },
 };
-
+```
 
 ## Configuration
 
 Here is how to customize the css. Here is how to customize using config file.
-```
