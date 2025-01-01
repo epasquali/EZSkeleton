@@ -22,6 +22,43 @@ Start development server by running yarn start or yarn dev
 
 Add, change, or remove files to your EZSkeleton template to build your website.
 
+### Configuration Files
+
+#### `config/metadata.tsx`
+
+Modify this file to set your app's metadata and copyright information.
+
+- **Metadata**: Update title, description, and Open Graph settings.
+- **Copyright**: Set your copyright information and the current year.
+
+Example:
+
+```ts
+export const APPMETADATA = {
+  title: "Your App Title",
+  description: "A short description of your app",
+  metadataBase: new URL("https://yourwebsite.com"),
+  openGraph: {
+    type: "website",
+    url: "/",
+    title: "Your App Title",
+    description: "A brief description of your site",
+    images: [
+      { url: "https://example.com/hero-image.jpg" },
+    ],
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Your App Title",
+    description: "A brief description for Twitter",
+    images: [
+      "https://example.com/hero-image.jpg",
+    ],
+  },
+};
+
+
 ## Configuration
 
 Here is how to customize the css. Here is how to customize using config file.
+```

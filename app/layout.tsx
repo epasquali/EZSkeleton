@@ -6,11 +6,9 @@ import {
   mantineHtmlProps,
 } from "@mantine/core";
 import { theme } from "../theme";
+import { APPMETADATA } from "../config/metadata";
 
-export const metadata = {
-  title: "Mantine Next.js template",
-  description: "I am using Mantine with Next.js!",
-};
+export const metadata = APPMETADATA;
 
 export default function RootLayout({ children }: { children: any }) {
   return (
