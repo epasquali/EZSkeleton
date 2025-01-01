@@ -22,6 +22,11 @@ Start development server by running yarn start or yarn dev
 
 Add, change, or remove files to your EZSkeleton template to build your website.
 
+## Configuration
+
+EZSkeleton can easily be configured to use your App's information throughout all pages of the site.
+This is achieved via a few configuration files, as detailed below.
+
 ### Configuration Files
 
 #### `config/metadata.tsx`
@@ -34,6 +39,8 @@ Modify this file to set your app's metadata and copyright information.
 Example:
 
 ```ts
+export const COPYRIGHT = "YourAppName";
+
 export const APPMETADATA = {
   title: "Your App Title",
   description: "A short description of your app",
@@ -54,6 +61,19 @@ export const APPMETADATA = {
 };
 ```
 
-## Configuration
+#### `config/formheaders.tsx`
 
-Here is how to customize the css. Here is how to customize using config file.
+Modify this file to set the header messages on your app's login and registration forms.
+The file comes with some default messages already, but you can freely modify them to match
+your needs.
+
+- **AUTH_HEADERS.login**: Update header for your site's login form
+- **AUTH_HEADERS.register**: Update header message for your site's user registration form.
+
+Example:
+
+```ts
+export const AUTH_HEADERS = {
+  login: ["Log In to access your Dashboard", "🌟"],
+};
+```
