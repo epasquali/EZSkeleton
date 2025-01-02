@@ -1,9 +1,18 @@
 "use client";
-import { PasswordInput } from "@mantine/core";
+
+import { Anchor, Flex, PasswordInput } from "@mantine/core";
 import { useField } from "@mantine/form";
 import formValidation from "../../lib/form.validation";
 
-export function PasswordInputField() {
+interface PasswordInputFieldProps {
+  isRequired: boolean;
+  forgotPasswordLink: string;
+}
+
+export function PasswordInputField({
+  isRequired,
+  forgotPasswordLink,
+}: PasswordInputFieldProps) {
   function isValidPassword(password: string) {
     return formValidation.isValidPwd(password)
       ? null
@@ -17,11 +26,21 @@ export function PasswordInputField() {
   });
 
   return (
-    <PasswordInput
-      label="Your password"
-      required
-      {...pwdField.getInputProps()}
-      error={pwdField.error}
-    />
+    <>
+      <PasswordInput
+        label="Your password"
+        required={isRequired}
+        {...pwdField.getInputProps()}
+        error={pwdField.error}
+        style={{
+          marginBottom: pwdField.error ? "10px" : "43px",
+        }}
+      />
+      <Flex justify="center" mt="-20px">
+        <Anchor href={forgotPasswordLink} mt="10" size="sm">
+          I forgot my password 🙁
+        </Anchor>
+      </Flex>
+    </>
   );
 }

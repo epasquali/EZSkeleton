@@ -1,4 +1,4 @@
-import { Stack } from "@mantine/core";
+import { Anchor, Button, Flex, Stack } from "@mantine/core";
 import { UserInputs } from "./UserInputs";
 import { FormBox } from "../common/FormBox";
 
@@ -11,6 +11,10 @@ export function AuthForm({ headings }: AuthFormProps) {
     <Stack>
       <FormBox headings={headings}>
         <UserInputs />
+
+        <Button fullWidth mt="20" size="md">
+          Sign in
+        </Button>
       </FormBox>
     </Stack>
   );

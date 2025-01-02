@@ -2,7 +2,6 @@
 import { IconAlertTriangle } from "@tabler/icons-react";
 import { TextInput } from "@mantine/core";
 import { useField, isEmail } from "@mantine/form";
-
 import classes from "./EmailInputField.module.css";
 
 export function EmailInputField() {
@@ -14,6 +13,7 @@ export function EmailInputField() {
 
   return (
     <TextInput
+      mb="sm"
       {...emailField.getInputProps()}
       label="Your email address: "
       required

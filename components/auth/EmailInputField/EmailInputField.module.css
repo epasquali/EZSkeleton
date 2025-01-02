@@ -5,3 +5,7 @@
 .icon {
   color: light-dark(var(--mantine-color-red-6), var(--mantine-color-red-7));
 }
+
+.error {
+  min-height: 40px;
+}
