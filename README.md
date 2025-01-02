@@ -22,6 +22,19 @@ Start development server by running yarn start or yarn dev
 
 Add, change, or remove files to your EZSkeleton template to build your website.
 
+For local development, create an .env.local file with the following contents:
+
+```ts
+NEXT_PUBLIC_BRAINDRIP_API_URL = http://localhost:8080
+NEXT_PUBLIC_BRAINDRIP_FE_URL = http://localhost:3000
+```
+
+Where of course the API_URL is the local address/port of your backend.
+
+For deployed dev or staging servers, create an equivalent file with the URL of your dev/staging server.
+
+For production servers, declare those variables in your production environment settings.
+
 ## Configuration
 
 EZSkeleton can easily be configured to use your App's information throughout all pages of the site.
@@ -29,7 +42,25 @@ This is achieved via a few configuration files, as detailed below.
 
 ### Configuration Files
 
-#### `config/metadata.tsx`
+#### `config/api.js`
+
+Use this file to set up the URLs for services used in your application.
+
+Example:
+
+```js
+export const APICFG = {
+  apiurl: process.env.NEXT_PUBLIC_BRAINDRIP_API_URL,
+};
+
+export const AUTH_URL = `${APICFG.apiurl}/auth`;
+
+export const AUTH_LOGIN_URL = `${AUTH_URL}/login`;
+```
+
+You can add more routes like payments, users, etc.
+
+#### `config/metadata.js`
 
 Modify this file to set your app's metadata and copyright information.
 
@@ -38,7 +69,7 @@ Modify this file to set your app's metadata and copyright information.
 
 Example:
 
-```ts
+```js
 export const COPYRIGHT = "YourAppName";
 
 export const APPMETADATA = {
@@ -61,7 +92,7 @@ export const APPMETADATA = {
 };
 ```
 
-#### `config/formheaders.tsx`
+#### `config/formheaders.js`
 
 Modify this file to set the header messages on your app's login and registration forms.
 The file comes with some default messages already, but you can freely modify them to match
@@ -72,19 +103,19 @@ your needs.
 
 Example:
 
-```ts
+```js
 export const AUTH_HEADERS = {
   login: ["Log In to access your Dashboard", "🌟"],
 };
 ```
 
-#### `config/navlinks.tsx`
+#### `config/navlinks.js`
 
 Modify this file to set internal and external navigation links used throughout your application.
 
 Example:
 
-```ts
+```js
 export const INTERNAL_LINKS = {
   forgotPassword: "/user/reset_password",
 };

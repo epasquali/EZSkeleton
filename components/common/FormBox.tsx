@@ -11,7 +11,7 @@ export function FormBox({ headings, children }: FormBoxProps) {
   return (
     <>
       <FormHeadings headings={headings} />
-      <Paper shadow="xs" w={"35vw"} px={30} py={50}>
+      <Paper shadow="xs" w={"35vw"} px={30} py={30}>
         {children}
       </Paper>
     </>

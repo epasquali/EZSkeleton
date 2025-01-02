@@ -36,11 +36,13 @@ export function PasswordInputField({
           marginBottom: pwdField.error ? "10px" : "43px",
         }}
       />
-      <Flex justify="center" mt="-20px">
-        <Anchor href={forgotPasswordLink} mt="10" size="sm">
-          I forgot my password 🙁
-        </Anchor>
-      </Flex>
+      {forgotPasswordLink && (
+        <Flex justify="center" mt="-20px">
+          <Anchor href={forgotPasswordLink} mt="10" size="sm">
+            I forgot my password 🙁
+          </Anchor>
+        </Flex>
+      )}
     </>
   );
 }

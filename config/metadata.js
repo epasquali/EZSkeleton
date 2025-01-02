@@ -1,4 +1,6 @@
-export const COPYRIGHT = "EZSkeleton";
+export const APPNAME = "EZSkeleton";
+
+export const COPYRIGHT = APPNAME + " LLC";
 
 export const APPMETADATA = {
   title: "EZSkeleton - Simple Nextjs Mantine Template",
