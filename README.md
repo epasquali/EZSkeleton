@@ -77,3 +77,15 @@ export const AUTH_HEADERS = {
   login: ["Log In to access your Dashboard", "🌟"],
 };
 ```
+
+#### `config/navlinks.tsx`
+
+Modify this file to set internal and external navigation links used throughout your application.
+
+Example:
+
+```ts
+export const INTERNAL_LINKS = {
+  forgotPassword: "/user/reset_password",
+};
+```

@@ -13,11 +13,13 @@ export function EmailInputField() {
 
   return (
     <TextInput
-      mb="sm"
       {...emailField.getInputProps()}
       label="Your email address: "
       required
       error={emailField.error}
+      style={{
+        marginBottom: emailField.error ? "" : "20px",
+      }}
       rightSection={
         <IconAlertTriangle
           stroke={1.5}
