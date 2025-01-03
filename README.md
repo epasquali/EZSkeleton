@@ -120,3 +120,35 @@ export const INTERNAL_LINKS = {
   forgotPassword: "/user/reset_password",
 };
 ```
+
+## Theming
+
+You can also change the look and feel of your site via some special EZSkeleton theming. Many elements in EZSkeleton
+have a customizable css that you can set via the **themes.tsx** file.
+
+You can add your own theme (recommended) using the EZSkeleton theme as a template, from which you can for instance
+easily customize things like:
+
+### Navbar
+
+You can set various navbar variants, for example, a different navbar for different page layouts. Customize the background color, font color, and height.
+
+Example:
+
+```ts
+export const EZSkeletonTheme = createTheme({
+  /*Configure variants for your navbars*/
+  navbars: {
+    landingpage: {
+      bgColor: "blue.5",
+      fontColor: "gray.0",
+      height: "70px",
+    },
+    standardpage: {
+      bgColor: "red.5",
+      fontColor: "grey.9",
+      height: "60px",
+    },
+  },
+});
+```

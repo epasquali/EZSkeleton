@@ -1,5 +1,5 @@
 export const APICFG = {
-  apiurl: process.env.NEXT_PUBLIC_BRAINDRIP_API_URL,
+  apiurl: process.env.NEXT_PUBLIC_EZSKELETON_API_URL,
 };
 
 export const AUTH_URL = `${APICFG.apiurl}/auth`;

@@ -13,31 +13,7 @@ import {
 import { useDisclosure } from "@mantine/hooks";
 import classes from "./Navbar.module.css";
 import { getMantineColor } from "../../../utils/themeutils";
-
-const links = [
-  { link: "/about", label: "Features" },
-  {
-    link: "#1",
-    label: "Learn",
-    links: [
-      { link: "/docs", label: "Documentation" },
-      { link: "/resources", label: "Resources" },
-      { link: "/community", label: "Community" },
-      { link: "/blog", label: "Blog" },
-    ],
-  },
-  { link: "/about", label: "About" },
-  { link: "/pricing", label: "Pricing" },
-  {
-    link: "#2",
-    label: "Support",
-    links: [
-      { link: "/faq", label: "FAQ" },
-      { link: "/demo", label: "Book a demo" },
-      { link: "/forums", label: "Forums" },
-    ],
-  },
-];
+import { getNavLinks } from "../../../config/navlinks";
 
 interface NavbarProps {
   variant?: string;
@@ -46,13 +22,20 @@ interface NavbarProps {
 export function Navbar({ variant }: NavbarProps) {
   const theme = useMantineTheme();
   const navbarcfg = theme.navbars[variant];
+  const navlinks = getNavLinks();
 
   const [opened, { toggle }] = useDisclosure(false);
 
-  const items = links.map((link) => {
-    const menuItems = link.links?.map((item) => (
-      <Menu.Item key={item.link}>{item.label}</Menu.Item>
-    ));
+  const items = navlinks.map((link) => {
+    const menuItems = link.submenu?.map((item) => {
+      return (
+        <Menu.Item key={item.url}>
+          <a href={item.url} className={classes.link}>
+            {item.label}
+          </a>{" "}
+        </Menu.Item>
+      );
+    });
 
     if (menuItems) {
       return (
@@ -64,7 +47,7 @@ export function Navbar({ variant }: NavbarProps) {
         >
           <Menu.Target>
             <a
-              href={link.link}
+              href={link.url}
               className={classes.link}
               onClick={(event) => event.preventDefault()}
             >
@@ -80,12 +63,7 @@ export function Navbar({ variant }: NavbarProps) {
     }
 
     return (
-      <a
-        key={link.label}
-        href={link.link}
-        className={classes.link}
-        onClick={(event) => event.preventDefault()}
-      >
+      <a key={link.label} href={link.url} className={classes.link}>
         {link.label}
       </a>
     );
