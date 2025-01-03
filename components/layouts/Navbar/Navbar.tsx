@@ -49,6 +49,14 @@ export function Navbar({ variant }: NavbarProps) {
             <a
               href={link.url}
               className={classes.link}
+              style={{
+                color: navbarcfg?.fontColor
+                  ? getMantineColor({ color: navbarcfg?.fontColor, theme })
+                  : "",
+                "--navlink-hover-bg": navbarcfg?.hoverbg
+                  ? getMantineColor({ color: navbarcfg?.hoverbg, theme })
+                  : "",
+              }}
               onClick={(event) => event.preventDefault()}
             >
               <Center>
@@ -63,7 +71,19 @@ export function Navbar({ variant }: NavbarProps) {
     }
 
     return (
-      <a key={link.label} href={link.url} className={classes.link}>
+      <a
+        key={link.label}
+        href={link.url}
+        className={classes.link}
+        style={{
+          color: navbarcfg?.fontColor
+            ? getMantineColor({ color: navbarcfg?.fontColor, theme })
+            : "",
+          "--navlink-hover-bg": navbarcfg?.hoverbg
+            ? getMantineColor({ color: navbarcfg?.hoverbg, theme })
+            : "",
+        }}
+      >
         {link.label}
       </a>
     );
@@ -80,7 +100,7 @@ export function Navbar({ variant }: NavbarProps) {
     >
       <Container size={"97%"}>
         <div className={classes.inner}>
-          <Image src="/fishbone.png" alt="EZSkeleton logo" h={"30px"} />
+          <Image src="/fishbonewhite.png" alt="EZSkeleton logo" h={"30px"} />
           <Group gap={5} visibleFrom="sm">
             {items}
           </Group>

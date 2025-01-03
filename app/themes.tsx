@@ -11,8 +11,9 @@ export const EZSkeletonTheme = createTheme({
       height: "70px",
     },
     standardpage: {
-      bgColor: "red.5",
-      fontColor: "grey.9",
+      bgColor: "gray.9",
+      fontColor: "gray.0",
+      hoverbg: "gray.6",
       height: "60px",
     },
   },
