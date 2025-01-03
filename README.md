@@ -25,11 +25,11 @@ Add, change, or remove files to your EZSkeleton template to build your website.
 For local development, create an .env.local file with the following contents:
 
 ```ts
-NEXT_PUBLIC_BRAINDRIP_API_URL = http://localhost:8080
-NEXT_PUBLIC_BRAINDRIP_FE_URL = http://localhost:3000
+NEXT_PUBLIC_YOURAPPNAMEHERE_API_URL = http://localhost:8080
+NEXT_PUBLIC_YOURAPPNAMEHERE_FE_URL = http://localhost:3000
 ```
 
-Where of course the API_URL is the local address/port of your backend.
+Where of course the API_URL is the local address/port of your backend, and of course "YOURAPPNAMEHERE" is the name of your app.
 
 For deployed dev or staging servers, create an equivalent file with the URL of your dev/staging server.
 
@@ -50,7 +50,7 @@ Example:
 
 ```js
 export const APICFG = {
-  apiurl: process.env.NEXT_PUBLIC_BRAINDRIP_API_URL,
+  apiurl: process.env.NEXT_PUBLIC_YOURAPPNAMEHERE_API_URL,
 };
 
 export const AUTH_URL = `${APICFG.apiurl}/auth`;

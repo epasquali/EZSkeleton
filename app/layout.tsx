@@ -5,7 +5,7 @@ import {
   ColorSchemeScript,
   mantineHtmlProps,
 } from "@mantine/core";
-import { theme } from "../theme";
+import { EZSkeletonTheme } from "./themes";
 import { APPMETADATA } from "../config/metadata";
 
 export const metadata = APPMETADATA;
@@ -22,7 +22,9 @@ export default function RootLayout({ children }: { children: any }) {
         />
       </head>
       <body>
-        <MantineProvider theme={theme}>{children}</MantineProvider>
+        <MantineProvider withGlobalStyles theme={EZSkeletonTheme}>
+          {children}
+        </MantineProvider>
       </body>
     </html>
   );
